@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Open Parking</title>
+
+    <script>
+        if(localStorage.getItem("loggedIn")!="true"){
+            window.location.href="login.html";
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../script/logout.js"></script>
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../media/logo/logo.png">
+        ParkEase
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="../html/aboutus.html">About Us</a>
+        <a href="../html/howitworks.html">How It Works</a>
+        <a href="../html/popularareas.html">Popular Parking Areas</a>
+        <a href="../html/services.html">Services</a>
+        <a href="../html/faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<section class="page-banner">
+    <h1>Open Parking Areas</h1>
+    <p>Explore open parking locations in Kathmandu Valley.</p>
+</section>
+
+<div class="slider">
+
+    <div class="place"
+    onclick="showParking(
+    'Pashupati Area',
+    'Pashupati, Kathmandu',
+    '../media/populararea/oppashupati.jpg',
+    `
+    <div class='parking-place'>
+        <h3>Pasupati Temple Parking</h3>
+        <p>Parking Garage</p>
+        <p>Kathmandu</p>
+        <p class='status'>Open 24 Hours</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Gaushala Ground</h3>
+        <p>Tourist Attraction</p>
+        <p>Kathmandu</p>
+        <p class='status'>Open 24 Hours</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/oppashupati.jpg">
+        <h3>Pashupati Area</h3>
+
+    </div>
+
+     <div class="place"
+    onclick="showParking(
+    'New Road Area',
+    'New Road, Kathmandu',
+    '../media/populararea/opnewroad.jpg',
+    `
+    <div class='parking-place'>
+        <h3>Civil Mall Parking Lot</h3>
+        <p>Public Parking Space</p>
+        <p>Kathmandu</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Civil Mall Car Parking</h3>
+        <p>Parking Lot</p>
+        <p>Kathmandu</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>City Centre</h3>
+        <p>Shopping Mall</p>
+        <p>980-2024109</p>
+        <p class='status'>9:30 AM – 10 PM</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/opnewroad.jpg">
+        <h3>New Road Area</h3>
+
+    </div>
+
+
+    <div class="place"
+    onclick="showParking(
+    'Tokha Area',
+    'Tokha, Kathmandu',
+    '../media/populararea/optokha.webp',
+    `
+    <div class='parking-place'>
+        <h3>Teaching Hospital Parking</h3>
+        <p>Public Parking Space</p>
+        <p class='status'>Open 24 Hours</p>
+        <p>Very good facilities. Car and motorcycle parking available any time.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Tokha Keba Fun Park</h3>
+        <p>Water Park</p>
+        <p>01-5703025</p>
+        <p class='status'>Open 24 Hours</p>
+        <p>Well managed parking facilities.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Chiya Kunda</h3>
+        <p>Cafe</p>
+        <p>985-1087720</p>
+        <p class='status'>6 AM – 9 PM</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/optokha.webp">
+        <h3>Tokha Area</h3>
+
+    </div>
+
+    <div class="place"
+    onclick="showParking(
+    'Budhanilkantha Area',
+    'Budhanilkantha, Kathmandu',
+    '../media/populararea/opB.jpg',
+    `
+    <div class='parking-place'>
+        <h3>New Bhakta Park</h3>
+        <p>Park</p>
+        <p class='status'>Open 24 Hours</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>The Best Washing Parking</h3>
+        <p>Public Parking Space</p>
+        <p>10 Setopul</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Pay Parking</h3>
+        <p>Parking Garage</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/opB.jpg">
+        <h3>Budhanilkantha Area</h3>
+
+    </div>
+
+</div>
+
+<div class="popup" id="popup">
+
+    <span class="close"
+          onclick="closePopup()">&times;</span>
+
+    <img id="popup-img">
+
+    <h2 id="popup-title"></h2>
+
+    <p id="popup-location"></p>
+
+    <div id="popup-details"></div>
+
+</div>
+
+<footer>
+    © 2026 ParkEase
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="../script/parking.js"></script>
+
+</body>
+</html>

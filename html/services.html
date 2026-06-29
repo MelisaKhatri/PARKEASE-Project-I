@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+<script>
+    if(localStorage.getItem("loggedIn")!="true"){
+        window.location.href ="html/login.html";
+    }
+</script>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../script/logout.js"></script>
+</head>
+<body>
+    <header>
+        <div class = "logo">
+            <img src ="../media/logo/logo.png">ParkEase
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="../html/aboutus.html">About Us</a>
+            <a href="../html/howitworks.html">How It Works</a>
+            <a href="../html/popularareas.html">Popular Parking Areas</a>
+            <a href="../html/services.html">Services</a>
+            <a href="../html/faq.html">FAQ</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+   <section class="page-banner">
+    <h1>Our Services</h1>
+    <p>Discover our parking services.</p>
+</section>
+   <div class="container">
+
+    <div class="panel">
+        <img src="../media/services/booking.jpg">
+        <div class="info">
+            <h3>Spot Booking</h3>
+            <p>Reserve parking spaces in advance.</p>
+        </div>
+    </div>
+    <div class="panel">
+        <img src="../media/services/onlinepay.jpg">
+        <div class="info">
+            <h3>Online Payment</h3>
+            <p>Book and pay</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <img src="../media/services/area.jpg">
+        <div class="info">
+            <h3>Parking Areas</h3>
+            <p>View multiple parking zones.</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <img src="../media/services/guidance.jpg">
+        <div class="info">
+            <h3>Navigation</h3>
+            <p>Find your reserved spot easily.</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <img src="../media/services/support.jpg">
+        <div class="info">
+            <h3>Support</h3>
+            <p>Get help whenever needed.</p>
+        </div>
+    </div>
+</div>
+<footer>
+    © 2026 ParkEase
+</footer>
+</body>
+</html> 

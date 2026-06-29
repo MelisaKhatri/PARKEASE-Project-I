@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Underground Parking</title>
+
+    <script>
+        if(localStorage.getItem("loggedIn")!="true"){
+            window.location.href="login.html";
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../script/logout.js"></script>
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../media/logo/logo.png">
+        ParkEase
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="../html/aboutus.html">About Us</a>
+        <a href="../html/howitworks.html">How It Works</a>
+        <a href="../html/popularareas.html">Popular Parking Areas</a>
+        <a href="../html/services.html">Services</a>
+        <a href="../html/faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<section class="page-banner">
+    <h1>Underground Parking</h1>
+    <p>Explore underground parking locations in Kathmandu Valley.</p>
+</section>
+
+<div class="slider">
+
+    <div class="place"
+    onclick="showParking(
+    'Bagbazar Parking',
+    'Bagbazar, Kathmandu',
+    '../media/populararea/udgbagbazar.jpg',
+    `
+    <div class='parking-place'>
+        <h3>Bishal Bazar Underground Parking</h3>
+        <p>Parking Lot</p>
+        <p>नयाँ सडक</p>
+        <p class='status'>Open · Closes 11 PM</p>
+        <p>Somewhat less crowded compared to other mall.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Triveni Complex Underground Parking</h3>
+        <p>Parking Lot</p>
+        <p class='status'> Closes 7 PM</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>TMT Complex Bagbazar Parking</h3>
+        <p>Parking Lot</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/udgbagbazar.jpg">
+
+        <h3>Bagbazar Parking</h3>
+
+    </div>
+
+    <div class="place"
+    onclick="showParking(
+    'Thamel Parking',
+    'Thamel, Kathmandu',
+    '../media/populararea/thamel.png',
+    `
+
+    <div class='parking-place'>
+        <h3>Thamel Parking पार्किङ</h3>
+        <p>Parking Garage</p>
+        <p>Near Vaishali Hotel</p>
+        <p class='status'>Open 24 Hours</p>
+        <p>Charge 80 NR/HR</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Basement Parking</h3>
+        <p>Parking Lot</p>
+        <p>JP Rd</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Chhayadevi Parking Lot</h3>
+        <p>Parking Lot</p>
+        <p> Tridevi Marg</p>
+        <p>Plenty of parking space.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Narsingh Camp Parking Lot</h3>
+        <p>Parking Lot</p>
+        <p>P876+P6C</p>
+        <p class='status'>Open 24 Hours</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/thamel.png">
+
+        <h3>Thamel Parking</h3>
+
+    </div>
+  
+    <div class="place"
+    onclick="showParking(
+    'Swoyambhu Parking',
+    'Kathmandu',
+    '../media/populararea/udgswoyambhu.jpg',
+    `
+    <div class='parking-place'>
+        <h3>Swoyambhunath Bike Parking Area</h3>
+        <p>Parking lot for motorcycles</p>
+        <p>Kathmandu</p>
+        <p class='status'>Open 24 Hours</p>
+        <p>Bike parking is available.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Parking</h3>
+        <p>Public parking space</p>
+        <p>Kathmandu</p>
+        <p>For motorbikes there is space higher up.</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Swayambu Parking</h3>
+        <p>Public parking space</p>
+        <p>Kathmandu</p>
+    </div>
+
+    <div class='parking-place'>
+        <h3>Makalu EV Charging Station</h3>
+        <p>Electric vehicle charging station</p>
+        <p>976-7198202</p>
+        <p class='status'>Open · Closes 11 PM</p>
+    </div>
+    `)">
+
+        <img src="../media/populararea/udgswoyambhu.jpg">
+
+        <h3>Swoyambhu Parking</h3>
+
+    </div>
+
+</div>
+
+<div class="popup" id="popup">
+
+    <span class="close"
+          onclick="closePopup()">&times;</span>
+
+    <img id="popup-img">
+
+    <h2 id="popup-title"></h2>
+
+    <p id="popup-location"></p>
+
+    <div id="popup-details"></div>
+
+</div>
+
+<footer>
+    © 2026 ParkEase
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="../script/parking.js"></script>
+
+</body>
+</html>

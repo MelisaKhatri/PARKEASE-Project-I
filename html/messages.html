@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Messages</title>
+</head>
+<body>
+
+<h1>Contact Messages</h1>
+
+<div id="allMessages"></div>
+
+<script>
+let messages = JSON.parse(localStorage.getItem("messages")) || "";
+
+let output = "";
+
+messages.forEach(function(msg){
+    output += `
+        <div style="border:1px solid gray;padding:10px;margin:10px;">
+            <h3>${msg.subject}</h3>
+            <p><b>Name:</b> ${msg.name}</p>
+            <p><b>Email:</b> ${msg.email}</p>
+            <p><b>Message:</b> ${msg.message}</p>
+            <p><b>Date:</b> ${msg.date}</p>
+        </div>
+    `;
+});
+
+document.getElementById("allMessages").innerHTML = output;
+</script>
+
+</body>
+</html>

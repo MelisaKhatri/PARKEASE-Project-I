@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+<script>
+    if(localStorage.getItem("loggedIn")!="true"){
+        window.location.href ="html/login.html";
+    }
+</script>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../script/logout.js"></script>
+</head>
+<body>
+    <header>
+        <div class = "logo">
+            <img src ="../media/logo/logo.png">ParkEase
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="../html/aboutus.html">About Us</a>
+            <a href="../html/howitworks.html">How It Works</a>
+            <a href="../html/popularareas.html">Popular Parking Areas</a>
+            <a href="../html/services.html"> Services</a>
+            <a href="../html/faq.html">FAQ</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+ <section class="page-banner">
+    <h1>Contact Us</h1>
+    <p>Feel free to contact us.</p>
+</section>
+
+<section class="contact">
+
+    <div class="contact-info">
+
+        <div class="info-box">
+            <h3>Email</h3>
+            <a href="mailto:parkease@gmail.com">
+                 parkease@gmail.com
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>Phone</h3>
+            <a href="tel:+9779812345678">
+                +977 9812345678
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>Instagram</h3>
+            <a href="#">
+                @parkease
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>Facebook</h3>
+            <a href="#">
+                ParkEase Official
+            </a>
+        </div>
+
+    </div>
+
+    <form id="contactForm">
+
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <input type="email" id="email" placeholder="Email" required>
+
+        <input type="text" id="subject" placeholder="Subject" required>
+
+        <textarea id="message" rows="5" placeholder="Message" required></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<footer>
+    © 2026 ParkEase
+</footer>
+<script src="../script/contactus.js"></script>
+</body>
+</html>
+
+   
