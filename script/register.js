@@ -6,11 +6,6 @@ function validateForm() {
     let confirm = document.getElementById("confirm").value;
     let dob = document.getElementById("dob").value;
 
-    if(name.length < 3){
-        alert("Name must contain at least 3 characters.");
-        return false;
-    }
-
     if(password.length < 6){
         alert("Password must be at least 6 characters.");
         return false;

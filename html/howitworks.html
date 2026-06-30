@@ -1,74 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
-<script>
-    if(localStorage.getItem("loggedIn")!="true"){
-        window.location.href ="html/login.html";
-    }
-</script>
-<link rel="stylesheet" href="../css/style.css">
-<script src="../script/logout.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem("loggedIn") != "true") {
+        window.location.href = "./login.html";
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../script/logout.js"></script>
+  </head>
+  <body>
     <header>
-        <div class = "logo">
-            <img src ="../media/logo/logo.png">ParkEase
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="../html/aboutus.html">About Us</a>
-            <a href="../html/howitworks.html">How It Works</a>
-            <a href="../html/popularareas.html">Popular Parking Areas</a>
-            <a href="../html/services.html"> Services</a>
-            <a href="../html/faq.html">FAQ</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </nav>
+      <div class="logo"><img src="../media/logo/logo.png" />ParkEase</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./howitworks.html">How It Works</a>
+        <a href="./popularareas.html">Popular Parking Areas</a>
+        <a href="./services.html"> Services</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
     </header>
     <section class="page-banner">
-    <h1>How ParkEase Works</h1>
-    <p>Parking made easy in four simple steps.</p>
-</section>
+      <h1>How ParkEase Works</h1>
+      <p>Parking made easy in four simple steps.</p>
+    </section>
 
-<section class="timeline">
-
-    <div class="step-box left">
+    <section class="timeline">
+      <div class="step-box left">
         <div class="circle">1</div>
         <div class="text">
-            <h2>Create Account</h2>
-            <p>Register and login to access ParkEase services.</p>
+          <h2>Create Account</h2>
+          <p>Register and login to access ParkEase services.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="step-box right">
+      <div class="step-box right">
         <div class="circle">2</div>
         <div class="text">
-            <h2>Find Parking</h2>
-            <p>Browse open and underground parking areas.</p>
+          <h2>Find Parking</h2>
+          <p>Browse open and underground parking areas.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="step-box left">
+      <div class="step-box left">
         <div class="circle">3</div>
         <div class="text">
-            <h2>View Details</h2>
-            <p>Check parking location and vehicle capacity.</p>
+          <h2>View Details</h2>
+          <p>Check parking location and vehicle capacity.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="step-box right">
+      <div class="step-box right">
         <div class="circle">4</div>
         <div class="text">
-            <h2>Park Easily</h2>
-            <p>Reach your destination quickly and save time.</p>
+          <h2>Park Easily</h2>
+          <p>Reach your destination quickly and save time.</p>
         </div>
-    </div>
-
-</section>
-<footer>
-    © 2026 ParkEase
-</footer>
-</body>
+      </div>
+    </section>
+    <footer>© 2026 ParkEase</footer>
+  </body>
 </html>
-

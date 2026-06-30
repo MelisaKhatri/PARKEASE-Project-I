@@ -1,88 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
-<script>
-    if(localStorage.getItem("loggedIn")!="true"){
-        window.location.href ="html/login.html";
-    }
-</script>
-<link rel="stylesheet" href="../css/style.css">
-<script src="../script/logout.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem("loggedIn") != "true") {
+        window.location.href = "./login.html";
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../script/logout.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class = "logo">
-            <img src ="../media/logo/logo.png">ParkEase
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="../html/aboutus.html">About Us</a>
-            <a href="../html/howitworks.html">How It Works</a>
-            <a href="../html/popularareas.html">Popular Parking Areas</a>
-            <a href="../html/services.html">Services</a>
-            <a href="../html/faq.html">FAQ</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </nav>
+      <div class="logo"><img src="../media/logo/logo.png" />ParkEase</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./howitworks.html">How It Works</a>
+        <a href="./popularareas.html">Popular Parking Areas</a>
+        <a href="./services.html">Services</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
     </header>
-    
-<div class="content">
 
-  <div class="sidebar">
-    <div class="search-box">
-      <h3>Search Parking</h3>
+    <div class="content">
+      <div class="sidebar">
+        <div class="search-box">
+          <h3>Search Parking</h3>
 
-      <label>Location</label>
-      <input type="text" id="loc" placeholder="e.g. Thamel, Kathmandu" value="Thamel, Kathmandu">
+          <label>Location</label>
+          <input
+            type="text"
+            id="loc"
+            placeholder="e.g. Thamel, Kathmandu"
+            value="Thamel, Kathmandu"
+          />
 
-      <label>Vehicle Type</label>
-      <select id="vtype">
-        <option value="all">All Vehicles</option>
-        <option value="2w">2-Wheeler (Bike / Scooter)</option>
-        <option value="4w">4-Wheeler (Car / Van)</option>
-      </select>
+          <label>Vehicle Type</label>
+          <select id="vtype">
+            <option value="all">All Vehicles</option>
+            <option value="2w">2-Wheeler (Bike / Scooter)</option>
+            <option value="4w">4-Wheeler (Car / Van)</option>
+          </select>
 
-      <div class="two-col">
-        <div>
-          <label>Date</label>
-          <input type="date" id="date">
+          <div class="two-col">
+            <div>
+              <label>Date</label>
+              <input type="date" id="date" />
+            </div>
+            <div>
+              <label>Time</label>
+              <input type="time" id="time" value="10:00" />
+            </div>
+          </div>
+
+          <label>Duration</label>
+          <select id="duration">
+            <option>1 Hour</option>
+            <option selected>2 Hours</option>
+            <option>4 Hours</option>
+            <option>Full Day</option>
+          </select>
+
+          <button class="search-btn" onclick="doSearch()">
+            Search Parking
+          </button>
+
+          <p class="tip">Click a map marker or a card to see details.</p>
         </div>
-        <div>
-          <label>Time</label>
-          <input type="time" id="time" value="10:00">
+
+        <div class="results">
+          <h4>Nearby Parking Spots</h4>
+          <div id="cards"></div>
         </div>
       </div>
 
-      <label>Duration</label>
-      <select id="duration">
-        <option>1 Hour</option>
-        <option selected>2 Hours</option>
-        <option>4 Hours</option>
-        <option>Full Day</option>
-      </select>
-
-      <button class="search-btn" onclick="doSearch()">Search Parking</button>
-
-      <p class="tip"> Click a map marker or a card to see details.</p>
+      <div id="map"></div>
     </div>
 
-    <div class="results">
-      <h4>Nearby Parking Spots</h4>
-      <div id="cards"></div>
-    </div>
-  </div>
+    <footer>© 2026 ParkEase</footer>
 
-  <div id="map"></div>
-</div>
-
-<footer>
-    © 2026 ParkEase
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="../script/finder.js"></script>
-
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="../script/finder.js"></script>
+  </body>
 </html>

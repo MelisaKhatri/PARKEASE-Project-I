@@ -1,93 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
-<script>
-    if(localStorage.getItem("loggedIn")!="true"){
-        window.location.href ="html/login.html";
-    }
-</script>
-<link rel="stylesheet" href="../css/style.css">
-<script src="../script/logout.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem("loggedIn") != "true") {
+        window.location.href = "./login.html";
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../script/logout.js"></script>
+  </head>
+  <body>
     <header>
-        <div class = "logo">
-            <img src ="../media/logo/logo.png">ParkEase
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="../html/aboutus.html">About Us</a>
-            <a href="../html/howitworks.html">How It Works</a>
-            <a href="../html/popularareas.html">Popular Parking Areas</a>
-            <a href="../html/services.html">Services</a>
-            <a href="../html/faq.html">FAQ</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </nav>
+      <div class="logo"><img src="../media/logo/logo.png" />ParkEase</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./howitworks.html">How It Works</a>
+        <a href="./popularareas.html">Popular Parking Areas</a>
+        <a href="./services.html">Services</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
     </header>
     <section class="faq-container">
-
-    <div class="faq-left">
-
+      <div class="faq-left">
         <h1>Frequently Asked Questions</h1>
 
-        <p class="faq-subtitle">
-            Find answers to common questions.
-        </p>
+        <p class="faq-subtitle">Find answers to common questions.</p>
 
         <div class="faq-box">
-            <h3>How do I find a parking space?</h3>
-            <p>
-                Use the Parking Finder page and enter your location.
-            </p>
+          <h3>How do I find a parking space?</h3>
+          <p>Use the Parking Finder page and enter your location.</p>
         </div>
 
         <div class="faq-box">
-            <h3>Is ParkEase free to use?</h3>
-            <p>
-                Yes, users can search parking spaces for free.
-            </p>
+          <h3>Is ParkEase free to use?</h3>
+          <p>Yes, users can search parking spaces for free.</p>
         </div>
 
         <div class="faq-box">
-            <h3>Can I register my parking lot?</h3>
-            <p>
-                Yes, owners can register their parking facilities.
-            </p>
+          <h3>Can I register my parking lot?</h3>
+          <p>Yes, owners can register their parking facilities.</p>
         </div>
 
         <div class="faq-box">
-            <h3>Does ParkEase work on mobile devices?</h3>
-            <p>
-                Yes, the website is fully responsive.
-            </p>
+          <h3>Does ParkEase work on mobile devices?</h3>
+          <p>Yes, the website is fully responsive.</p>
         </div>
+      </div>
 
-    </div>
-
-    <div class="faq-help">
-
+      <div class="faq-help">
         <h2>Still Need Help?</h2>
 
-        <p>
-            Our support team is always ready to help you.
-        </p>
+        <p>Our support team is always ready to help you.</p>
 
         <a href="contact.html">
-            <button class="button">
-                Contact Support
-            </button>
+          <button class="button">Contact Support</button>
         </a>
 
-        <img src="../media/faq/need help.jpg"
-             alt="Support">
-
-    </div>
-
-</section>
-<footer>
-    © 2026 ParkEase
-</footer>
-</body>
+        <img src="../media/faq/need help.jpg" alt="Support" />
+      </div>
+    </section>
+    <footer>© 2026 ParkEase</footer>
+  </body>
 </html>

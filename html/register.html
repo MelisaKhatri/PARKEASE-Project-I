@@ -1,99 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<body class="register-page">
+  <body class="register-page">
+    <header>
+      <div class="logo"><img src="../media/logo/logo.png" />ParkEase</div>
 
-<header>
-    <div class="logo">
-        <img src="../media/logo/logo.png">ParkEase
-    </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./howitworks.html">How It Works</a>
+        <a href="./popularareas.html">Popular Parking Areas</a>
+        <a href="./services.html">Services</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+    </header>
 
-    <nav>
-        <a href="../html/index.html">Home</a>
-        <a href="../html/aboutus.html">About Us</a>
-        <a href="../html/howitworks.html">How It Works</a>
-        <a href="../html/popularareas.html">Popular Parking Areas</a>
-        <a href="../html/services.html">Services</a>
-        <a href="../html/faq.html">FAQ</a>
-        <a href="../html/login.html">Login</a>
-    </nav>
-</header>
-
-<section class="register-container">
-
-    <div class="register-left">
-
-        <img src="../media/registration/why register.jpg"
-             class="register-image"
-             alt="Parking">
+    <section class="register-container">
+      <div class="register-left">
+        <img
+          src="../media/registration/why register.jpg"
+          class="register-image"
+          alt="Parking"
+        />
 
         <div class="why-box">
-            <h3>Why Register?</h3>
+          <h3>Why Register?</h3>
 
-            <p>Save favorite parking locations</p>
-            <p>Real-time availability</p>
-            <p>Faster booking experience</p>
-            <p>Secure and trusted platform</p>
+          <p>Save favorite parking locations</p>
+          <p>Real-time availability</p>
+          <p>Faster booking experience</p>
+          <p>Secure and trusted platform</p>
         </div>
+      </div>
 
-    </div>
-
-    <div class="register-right">
-
+      <div class="register-right">
         <h1>Create Your Account</h1>
 
-        <form onsubmit="return validateForm()">
+        <form onsubmit="return validateForm();">
+          <input type="text" id="name" placeholder="Full Name" required />
 
-            <input type="text"
-                   id="name"
-                   placeholder="Full Name"
-                   required>
+          <input type="email" id="email" placeholder="Email" required />
 
-            <input type="email"
-                   id="email"
-                   placeholder="Email"
-                   required>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
 
-            <input type="password"
-                   id="password"
-                   placeholder="Password"
-                   required>
+          <input
+            type="password"
+            id="confirm"
+            placeholder="Confirm Password"
+            required
+          />
 
-            <input type="password"
-                   id="confirm"
-                   placeholder="Confirm Password"
-                   required>
+          <input type="date" id="dob" required />
 
-            <input type="date"
-                   id="dob"
-                   required>
-
-            <button class="button" type="submit">
-                Register Now
-            </button>
-
+          <button class="button" type="submit">Register Now</button>
         </form>
 
         <p>
-            Already have an account?
-            <a href="../html/login.html">Login</a>
+          Already have an account?
+          <a href="./login.html">Login</a>
         </p>
+      </div>
+    </section>
+    <footer>© 2026 ParkEase</footer>
 
-    </div>
-
-</section>
-<footer>
-    © 2026 ParkEase
-</footer>
-
-<script src="../script/register.js"></script>
-
-</body>
+    <script src="../script/register.js"></script>
+  </body>
 </html>
