@@ -152,18 +152,45 @@
   }
 
   function callAndBook(id) {
-    var s = SPOTS.find(function(x) { return x.id === id; });
-    if (s) {
-      alert(
-        "Parking: " + s.name + "\n" +
-        "Location: " + s.area + ", Kathmandu\n" +
-        "Phone: " + s.phone + "\n" +
-        "Rate: Rs. " + s.rate + " / hour\n" +
-        "Vehicle: " + typeLabel(s.type) + "\n\n" +
-        "Please call the number above to confirm your booking."
-      );
+
+    var s = SPOTS.find(function(x) {
+        return x.id === id;
+    });
+
+    if (!s) return;
+
+    // Show parking details first
+    alert(
+        "Parking : " + s.name +
+        "\nLocation : " + s.area + ", Kathmandu" +
+        "\nPhone : " + s.phone +
+        "\nRate : Rs. " + s.rate + " / hour" +
+        "\nVehicle : " + typeLabel(s.type) +
+        "\n\nPlease call the parking owner to confirm your booking."
+    );
+    var payment = confirm(
+        "Would you like to pay now?\n\nClick OK to open the QR code."
+    );
+
+    if (payment) {
+
+        // Open QR image
+        window.open("../media/finder/QR.avif", "_blank");
+
+    
+        alert(
+            "Thank you for using ParkEase!\n\n" +
+            "Please scan the QR code to complete your payment.\n\n" +
+            "After payment, call the parking owner at:\n" +
+            s.phone +
+            "\n\nHave a safe journey!"
+        );
     }
-  }
+
+}
+
+
+
 
   window.onload = function() {
     document.getElementById("date").value = new Date().toISOString().split("T")[0];
