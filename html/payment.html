@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        if (localStorage.getItem("loggedIn") != "true") {
+            window.location.href = "./login.html";
+        }
+    </script>
+
+    <title>ParkEase | Payment</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../media/logo/logo.png">
+        ParkEase
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./howitworks.html">How It Works</a>
+        <a href="./popularareas.html">Popular Parking Areas</a>
+        <a href="./services.html">Services</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./finder.html">Finder</a>
+    </nav>
+</header>
+
+
+<div style="max-width:700px;margin:40px auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.1);text-align:center;">
+
+    <h2 style="color:#2563eb;">Complete Your Payment</h2>
+
+    <p>Please scan the QR code below to pay for your parking.</p>
+
+    <hr><br>
+
+    <h3 id="parkingName"></h3>
+
+    <p>
+        <strong>Vehicle :</strong>
+        <span id="vehicle"></span>
+    </p>
+
+    <p>
+        <strong>Duration :</strong>
+        <span id="duration"></span>
+    </p>
+
+    <p style="font-size:22px;color:#16a34a;">
+        <strong>Total Amount : Rs. <span id="amount"></span></strong>
+    </p>
+
+    <br>
+
+    <img
+        src="../media/finder/QR.avif"
+        alt="QR Code"
+        style="width:250px;border:5px solid #eee;border-radius:10px;"
+    >
+
+    <br><br>
+
+    <p>
+        Scan this QR using any payment app
+        (eSewa / Khalti / Mobile Banking)
+    </p>
+
+    <br>
+
+    <button
+        onclick="paymentDone()"
+        style="
+            background:#2563eb;
+            color:white;
+            border:none;
+            padding:14px 35px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        ">
+        I've Paid
+    </button>
+
+</div>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <div class="footer-logo">
+                <img src="../media/logo/logo.png">
+                <h2>ParkEase</h2>
+            </div>
+
+            <p>
+                ParkEase helps drivers quickly locate parking spaces across Kathmandu Valley.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>EXPLORE</h3>
+
+            <a href="../index.html">Home</a>
+            <a href="./aboutus.html">About Us</a>
+            <a href="./finder.html">Finder</a>
+            <a href="./howitworks.html">How It Works</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>PARKING</h3>
+
+            <a href="./popularareas.html">Popular Areas</a>
+            <a href="./services.html">Services</a>
+            <a href="./faq.html">FAQs</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>CONTACT</h3>
+
+            <a href="./contact.html">Contact Us</a>
+            <p>Kathmandu Valley</p>
+            <p>+977 9841234567</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        Copyright © 2026 ParkEase. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<script>
+
+const SPOTS = [
+
+    { id:1,name:"New Road Parking",rate:100,type:"4w" },
+    { id:2,name:"Durbarmarg Parking",rate:120,type:"4w" },
+    { id:3,name:"Thamel Parking",rate:80,type:"both" },
+    { id:4,name:"Boudha Parking",rate:60,type:"both" },
+    { id:5,name:"Pashupati Parking",rate:50,type:"both" },
+    { id:6,name:"Swoyambhu Parking",rate:30,type:"2w" },
+    { id:7,name:"Ratna Park Parking",rate:90,type:"4w" },
+    { id:9,name:"KM Mall Parking",rate:110,type:"4w" },
+    { id:10,name:"Chabahil Parking",rate:25,type:"2w" },
+    { id:11,name:"Lazimpat Parking",rate:85,type:"both" },
+    { id:12,name:"Putalisadak Parking",rate:35,type:"2w" }
+
+];
+
+const params = new URLSearchParams(window.location.search);
+
+const id = Number(params.get("id"));
+
+const parking = SPOTS.find(x => x.id === id);
+
+const duration = localStorage.getItem("duration") || "2 Hours";
+
+let hours = 2;
+
+if(duration=="1 Hour") hours=1;
+if(duration=="2 Hours") hours=2;
+if(duration=="4 Hours") hours=4;
+if(duration=="Full Day") hours=8;
+
+const total = parking.rate * hours;
+
+document.getElementById("parkingName").innerHTML = parking.name;
+
+document.getElementById("vehicle").innerHTML = parking.type;
+
+document.getElementById("duration").innerHTML = duration;
+
+document.getElementById("amount").innerHTML = total;
+
+
+function paymentDone(){
+
+    localStorage.setItem("parkingName",parking.name);
+
+    localStorage.setItem("amount",total);
+
+    localStorage.setItem("vehicle",parking.type);
+
+    localStorage.setItem("duration",duration);
+
+    window.location.href="ticket.html?id="+id;
+
+}
+
+</script>
+
+</body>
+</html>

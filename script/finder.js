@@ -1,4 +1,5 @@
 
+  
   const SPOTS = [
     { id:1,  name:"New Road Parking",     area:"New Road",     lat:27.7041, lng:85.3131, type:"4w",   rate:100, cap:20, avail:12, phone:"9812345678" },
     { id:2,  name:"Durbarmarg Parking",   area:"Durbarmarg",   lat:27.7104, lng:85.3176, type:"4w",   rate:120, cap:15, avail:5,  phone:"9812345678" },
@@ -159,34 +160,30 @@
 
     if (!s) return;
 
-    // Show parking details first
-    alert(
-        "Parking : " + s.name +
-        "\nLocation : " + s.area + ", Kathmandu" +
-        "\nPhone : " + s.phone +
-        "\nRate : Rs. " + s.rate + " / hour" +
-        "\nVehicle : " + typeLabel(s.type) +
-        "\n\nPlease call the parking owner to confirm your booking."
-    );
     var payment = confirm(
-        "Would you like to pay now?\n\nClick OK to open the QR code."
+        "Parking: " + s.name +
+        "\nLocation: " + s.area +
+        "\nRate: Rs. " + s.rate + "/hour" +
+        "\n\nWould you like to proceed to payment?"
     );
 
     if (payment) {
 
-        // Open QR image
-        window.open("../media/finder/QR.avif", "_blank");
+        localStorage.setItem("parkingName", s.name);
+        localStorage.setItem("vehicle", typeLabel(s.type));
+        localStorage.setItem("duration", document.getElementById("duration").value);
 
-    
-        alert(
-            "Thank you for using ParkEase!\n\n" +
-            "Please scan the QR code to complete your payment.\n\n" +
-            "After payment, call the parking owner at:\n" +
-            s.phone +
-            "\n\nHave a safe journey!"
-        );
+        var hours = 2;
+
+        if(document.getElementById("duration").value=="1 Hour") hours=1;
+        if(document.getElementById("duration").value=="2 Hours") hours=2;
+        if(document.getElementById("duration").value=="4 Hours") hours=4;
+        if(document.getElementById("duration").value=="Full Day") hours=8;
+
+        localStorage.setItem("amount", s.rate * hours);
+
+        window.location.href = "payment.html?id=" + s.id;
     }
-
 }
 
 
