@@ -1128,6 +1128,13 @@ nav a{
 #menu-toggle:checked + .menu-icon + nav{
     display:flex;
 }
+#menu-toggle{
+    display:none;
+}
+
+.menu-icon{
+    display:none;
+}
 
 .top,
 .welcome,
