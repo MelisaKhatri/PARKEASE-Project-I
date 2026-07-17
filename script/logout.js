@@ -4,6 +4,6 @@ function logout() {
     if (confirmLogout) {
         localStorage.removeItem("loggedIn");
         alert("You have been logged out successfully.");
-        window.location.href = "/html/login.html"; 
+        window.location.href = "../html/login.html"; 
     }
 }
